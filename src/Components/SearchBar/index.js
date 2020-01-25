@@ -4,7 +4,12 @@ import DropDown from "../DropDown";
 import GenericIcon from "../Icons/GenericIcon";
 import { searchIconPath } from "../Icons/paths";
 
-import { Wrapper, SearchInput } from "./styles";
+import {
+  SearchWrapper,
+  SearchInput,
+  Wrapper,
+  LastSearchedParagraph
+} from "./styles";
 
 const SearchBar = props => {
   const { onHandleSubmit } = props;
@@ -19,21 +24,37 @@ const SearchBar = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
-    onHandleSubmit(searchValue);
-    setLastSearches([searchValue, ...lastSearches]);
-    setSearchValue("");
+    if (searchValue.length > 3) {
+      onHandleSubmit(searchValue);
+      setLastSearches([searchValue, ...lastSearches]);
+      setSearchValue("");
+    }
+  };
+
+  const renderLastSearch = () => {
+    if (lastSearches.length) {
+      return (
+        <LastSearchedParagraph>
+          Ingredients: {lastSearches[0]}
+        </LastSearchedParagraph>
+      );
+    }
+    return null;
   };
 
   return (
-    <Wrapper onSubmit={handleSubmit}>
-      <DropDown options={lastSearches} />
-      <SearchInput
-        value={searchValue}
-        placeholder="Search by ingredients (comma separated)"
-        type="text"
-        onChange={handleChange}
-      />
-      <GenericIcon path={searchIconPath} />
+    <Wrapper>
+      <SearchWrapper onSubmit={handleSubmit}>
+        <DropDown options={lastSearches} />
+        <SearchInput
+          value={searchValue}
+          placeholder="Search recipies by ingredients (comma separated)"
+          type="text"
+          onChange={handleChange}
+        />
+        <GenericIcon path={searchIconPath} />
+      </SearchWrapper>
+      {renderLastSearch()}
     </Wrapper>
   );
 };

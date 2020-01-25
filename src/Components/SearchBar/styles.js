@@ -15,7 +15,7 @@ const searchInput = {
   border: "none"
 };
 
-export const Wrapper = styled.form`
+export const SearchWrapper = styled.form`
   position: relative;
   display: flex;
   align-items: center;
@@ -30,4 +30,17 @@ export const SearchInput = styled.input`
   width: ${searchInput.width};
   padding: ${searchInput.padding};
   border: ${searchInput.border};
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const Wrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+export const LastSearchedParagraph = styled.p`
+  color: green;
 `;
