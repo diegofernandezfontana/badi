@@ -1,15 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, Fragment } from "react";
 
 import DropDown from "../DropDown";
 import GenericIcon from "../Icons/GenericIcon";
 import { searchIconPath } from "../Icons/paths";
 
-import {
-  SearchWrapper,
-  SearchInput,
-  Wrapper,
-  LastSearchedParagraph
-} from "./styles";
+import { SearchWrapper, SearchInput, LastSearchedParagraph } from "./styles";
 
 const SearchBar = props => {
   const { onHandleSubmit } = props;
@@ -43,7 +38,7 @@ const SearchBar = props => {
   };
 
   return (
-    <Wrapper>
+    <Fragment>
       <SearchWrapper onSubmit={handleSubmit}>
         <DropDown options={lastSearches} />
         <SearchInput
@@ -55,7 +50,7 @@ const SearchBar = props => {
         <GenericIcon path={searchIconPath} />
       </SearchWrapper>
       {renderLastSearch()}
-    </Wrapper>
+    </Fragment>
   );
 };
 

@@ -36,11 +36,6 @@ export const SearchInput = styled.input`
   }
 `;
 
-export const Wrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
-
 export const LastSearchedParagraph = styled.p`
   color: green;
 `;

@@ -1,4 +1,4 @@
 import palette from "./palette";
-import breakPoints from "./breakPoints";
+import { breakPoints, sizes } from "./breakPoints";
 
-export { palette, breakPoints };
+export { palette, breakPoints, sizes };

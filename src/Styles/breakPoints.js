@@ -1,15 +1,13 @@
-const size = {
+export const sizes = {
   mobile: "360px",
   tablet: "768px",
   laptop: "1024px",
-  desktop: "1440px"
+  desktop: "1280px"
 };
 
-const breakPoints = {
-  mobile: `(min-width: ${size.mobile})`,
-  tablet: `(min-width: ${size.tablet})`,
-  laptop: `(min-width: ${size.laptop})`,
-  desktop: `(min-width: ${size.desktop})`
+export const breakPoints = {
+  mobile: `(min-width: ${sizes.mobile})`,
+  tablet: `(min-width: ${sizes.tablet})`,
+  laptop: `(min-width: ${sizes.laptop})`,
+  desktop: `(min-width: ${sizes.desktop})`
 };
-
-export default breakPoints;

@@ -12,7 +12,6 @@ const normalize = css`
     -webkit-text-size-adjust: 100%; /* 2 */
   }
   body {
-    background-color: red;
     margin: 0;
     font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
       "Segoe UI Emoji";
