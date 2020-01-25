@@ -1,5 +1,5 @@
-import expandMorePath from "./expandMorePath";
+import expandMoreIconPath from "./expandMoreIconPath";
 import searchIconPath from "./searchIconPath";
 import closeIconPath from "./closeIconPath";
 
-export { expandMorePath, searchIconPath, closeIconPath };
+export { expandMoreIconPath, searchIconPath, closeIconPath };
