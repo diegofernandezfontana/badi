@@ -1,9 +1,9 @@
 import React from "react";
 
-import { expandMorePath } from "./paths";
+import { expandMoreIconPath } from "./paths";
 import { palette } from "../../Styles";
 
-const defaultPath = expandMorePath;
+const defaultPath = expandMoreIconPath;
 
 const GenericIcon = props => {
   const { color, scale, path, viewBox, ...restProps } = props;

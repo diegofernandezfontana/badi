@@ -1,25 +1,56 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Fragment } from "react";
+
+import Card from "./Components/Card";
+import SearchBar from "./Components/SearchBar";
+import useFetchData from "./Services/useFetchData";
+import { MainBackground } from "./styles";
+import GlobalStyle from "./Styles/globalStyles";
 
 function App() {
+  const { data, setFetchParams } = useFetchData("");
+
+  const generateUrl = ingredients => {
+    const ingredientsWithNoSpaces = ingredients.replace(/\s+/g, "+");
+    const encodedUrl = ingredientsWithNoSpaces.replace(/,/g, "%2C");
+
+    return encodedUrl;
+  };
+
+  const handleSubmit = fieldValues => {
+    if (fieldValues.length > 3) {
+      const urlParams = generateUrl(fieldValues);
+      setFetchParams(`?i=${urlParams}`);
+    }
+  };
+
+  const renderCards = () => {
+    return data.map(recipie => {
+      const { href, ingredients, thumbnail, title } = recipie;
+
+      return (
+        <Card
+          href={href}
+          ingredients={ingredients}
+          thumbnail={thumbnail}
+          title={title}
+          key={href}
+        />
+      );
+    });
+  };
+
+  const renderSearchBar = () => {
+    return <SearchBar onHandleSubmit={handleSubmit} />;
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Fragment>
+      <GlobalStyle />
+      <MainBackground>
+        {renderSearchBar()}
+        {renderCards()}
+      </MainBackground>
+    </Fragment>
   );
 }
 
