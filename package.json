@@ -17,7 +17,12 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "./node_modules/.bin/cypress open",
+    "cy:run": "cypress run",
+    "cy:open": "./node_modules/.bin/cypress open",
+    "test:e2e:run": "start-server-and-test start http://localhost:3000 cy:run",
+    "test:e2e:dev": "start-server-and-test start http://localhost:3000 cy:open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -35,14 +40,18 @@
     ]
   },
   "devDependencies": {
-    "prop-types": "^15.7.2",
+    "@testing-library/cypress": "^5.0.2",
     "axios": "^0.19.2",
+    "cypress": "^3.8.3",
     "eslint": "^6.8.0",
     "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-cypress": "^2.8.1",
     "eslint-plugin-import": "^2.20.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "husky": "^4.2.0"
+    "husky": "^4.2.0",
+    "prop-types": "^15.7.2",
+    "start-server-and-test": "^1.10.7"
   }
 }

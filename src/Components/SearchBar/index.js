@@ -72,6 +72,7 @@ const SearchBar = props => {
           placeholder="Search recipies by ingredients (comma separated)"
           type="text"
           onChange={handleChange}
+          data-testid="searchbar-input"
         />
         <GenericIcon path={searchIconPath} />
       </SearchWrapper>
