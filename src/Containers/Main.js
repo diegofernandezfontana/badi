@@ -4,6 +4,8 @@ import Card from "../Components/Card";
 import SearchBar from "../Components/SearchBar";
 import useFetchData from "../Services/useFetchData";
 
+import { generateUrl } from "../utils";
+
 import {
   MainBackground,
   Container,
@@ -19,13 +21,6 @@ const Main = props => {
       const urlParams = generateUrl(fieldValues);
       setFetchParams(`?i=${urlParams}`);
     }
-  };
-
-  const generateUrl = ingredients => {
-    const ingredientsWithNoSpaces = ingredients.replace(/\s+/g, "+");
-    const encodedUrl = ingredientsWithNoSpaces.replace(/,/g, "%2C");
-
-    return encodedUrl;
   };
 
   const renderCards = () => {
