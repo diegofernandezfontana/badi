@@ -1,7 +1,7 @@
 import React from "react";
 
-import Card from "../Components/Card";
 import SearchBar from "../Components/SearchBar";
+import CardsList from '../Components/CardsList';
 import useFetchData from "../Services/useFetchData";
 
 import { generateUrl } from "../utils";
@@ -9,12 +9,10 @@ import { generateUrl } from "../utils";
 import {
   MainBackground,
   Container,
-  CardsContainer,
-  SearchBarContainer
 } from "./styles";
 
-const Main = props => {
-  const { data, setFetchParams } = useFetchData("");
+const Main = () => {
+  const { data, setFetchParams, currentPage, setCurrentPage } = useFetchData("");
 
   const handleSubmit = fieldValues => {
     if (fieldValues.length > 3) {
@@ -23,29 +21,15 @@ const Main = props => {
     }
   };
 
-  const renderCards = () => {
-    return data.map(recipie => {
-      const { href, ingredients, thumbnail, title } = recipie;
-
-      return (
-        <Card
-          href={href}
-          ingredients={ingredients}
-          thumbnail={thumbnail}
-          title={title}
-          key={href}
-        />
-      );
-    });
-  };
+  const handleLoadMore = () => {
+    setCurrentPage(currentPage + 1)
+  }
 
   return (
     <MainBackground>
       <Container>
-        <SearchBarContainer>
-          <SearchBar onHandleSubmit={handleSubmit} />
-        </SearchBarContainer>
-        <CardsContainer>{renderCards()}</CardsContainer>
+        <SearchBar onHandleSubmit={handleSubmit} />
+        <CardsList cards={data} onHandleLoadMore={handleLoadMore}/>
       </Container>
     </MainBackground>
   );
