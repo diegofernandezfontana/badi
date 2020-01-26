@@ -17,15 +17,16 @@ const Option = props => {
       <GenericIcon
         path={closeIconPath}
         onClick={onHandleRemove({ searchedValue })}
+        data-testid="option-close-icon"
       />
     </RowWrapper>
   );
 };
 
 Option.propTypes = {
-  searchedValue: PropTypes.string,
-  onHandleSearch: PropTypes.func,
-  onHandleRemove: PropTypes.func
+  searchedValue: PropTypes.string.isRequired,
+  onHandleSearch: PropTypes.func.isRequired,
+  onHandleRemove: PropTypes.func.isRequired
 };
 
 export default Option;
