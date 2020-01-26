@@ -10,8 +10,7 @@ const searchBarWrapper = {
 };
 
 const searchInput = {
-  width: "450px",
-  padding: "16px",
+  width: "100%",
   border: "none"
 };
 
@@ -28,7 +27,6 @@ export const SearchWrapper = styled.form`
 
 export const SearchInput = styled.input`
   width: ${searchInput.width};
-  padding: ${searchInput.padding};
   border: ${searchInput.border};
 
   &:focus {

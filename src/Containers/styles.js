@@ -1,10 +1,12 @@
 import styled from "styled-components";
 
-import { palette, breakPoints, sizes } from "../Styles";
+import { breakPoints, sizes } from "../Styles";
 
 const searchBar = {
   maxWidth: sizes.tablet
 };
+
+const bgColor = "#f6f6f6";
 
 const cards = {
   maxWidth: {
@@ -14,8 +16,7 @@ const cards = {
 };
 
 export const MainBackground = styled.div`
-  background-color: red;
-  background-color: ${palette.grey.main};
+  background-color: ${bgColor};
   display: flex;
   flex-direction: column;
   padding-top: 100px;
