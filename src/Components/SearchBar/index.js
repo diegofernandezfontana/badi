@@ -56,4 +56,10 @@ const SearchBar = props => {
   );
 };
 
+SearchBar.propTypes = {
+  onHandleSubmit: PropTypes.func,
+  onHandleRemove: PropTypes.func,
+  onHandleSearch: PropTypes.func
+};
+
 export default SearchBar;
