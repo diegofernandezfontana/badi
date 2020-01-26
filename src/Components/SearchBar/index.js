@@ -1,4 +1,5 @@
 import React, { useState, Fragment } from "react";
+import PropTypes from "prop-types";
 
 import DropDown from "../DropDown";
 import GenericIcon from "../Icons/GenericIcon";
@@ -7,7 +8,7 @@ import { searchIconPath } from "../Icons/paths";
 import { SearchWrapper, SearchInput, LastSearchedParagraph } from "./styles";
 
 const SearchBar = props => {
-  const { onHandleSubmit } = props;
+  const { onHandleSubmit, onHandleSearch } = props;
   const [searchValue, setSearchValue] = useState("");
   const [lastSearches, setLastSearches] = useState([]);
 
@@ -27,6 +28,25 @@ const SearchBar = props => {
     }
   };
 
+  const getFilteredSearches = searchedValue => {
+    const recipieIdx = lastSearches.findIndex(elem => elem === searchedValue);
+
+    return lastSearches.filter((_, idx) => idx !== recipieIdx);
+  };
+
+  const handleSearch = ({ searchedValue }) => event => {
+    const filteredSearches = getFilteredSearches(searchedValue);
+
+    setLastSearches([searchedValue, ...filteredSearches]);
+    onHandleSubmit(searchedValue);
+  };
+
+  const handleRemoveItem = ({ searchedValue }) => event => {
+    const filteredSearches = getFilteredSearches(searchedValue);
+
+    setLastSearches(filteredSearches);
+  };
+
   const renderLastSearch = () => {
     if (lastSearches.length) {
       return (
@@ -42,7 +62,11 @@ const SearchBar = props => {
   return (
     <Fragment>
       <SearchWrapper onSubmit={handleSubmit}>
-        <DropDown options={lastSearches} />
+        <DropDown
+          options={lastSearches}
+          onHandleSearch={handleSearch}
+          onHandleRemove={handleRemoveItem}
+        />
         <SearchInput
           value={searchValue}
           placeholder="Search recipies by ingredients (comma separated)"
