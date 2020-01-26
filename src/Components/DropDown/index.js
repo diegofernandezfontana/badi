@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 
 import GenericIcon from "../Icons/GenericIcon";
-import { expandMoreIconPath } from "../Icons/paths";
 import Option from "./Option";
 
 import { Wrapper, OptionsWrapper } from "./styles";

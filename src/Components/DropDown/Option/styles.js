@@ -3,7 +3,8 @@ import styled from "styled-components";
 const optionRow = {
   height: "40px",
   padding: "8px 16px",
-  marginBottom: "2px,"
+  marginBottom: "2px",
+  borderRadius: "4px"
 };
 
 export const RowWrapper = styled.div`
@@ -14,7 +15,8 @@ export const RowWrapper = styled.div`
   background-color: white;
   height: ${optionRow.height};
   padding: ${optionRow.padding};
-  margin-bottom: ${optionRow.marginBottom};
+  border-bottom: 1px solid ${optionRow.marginBottom};
+  border-radius: ${optionRow.borderRadius};
 `;
 
 export const RecipieWrapper = styled.p`

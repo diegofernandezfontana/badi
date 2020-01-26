@@ -19,6 +19,7 @@ const SearchBar = props => {
 
   const handleSubmit = event => {
     event.preventDefault();
+
     if (searchValue.length > 3) {
       onHandleSubmit(searchValue);
       setLastSearches([searchValue, ...lastSearches]);
@@ -30,10 +31,11 @@ const SearchBar = props => {
     if (lastSearches.length) {
       return (
         <LastSearchedParagraph>
-          Ingredients: {lastSearches[0]}
+          Results for: {lastSearches[0]}
         </LastSearchedParagraph>
       );
     }
+
     return null;
   };
 

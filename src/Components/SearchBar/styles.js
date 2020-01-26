@@ -14,6 +14,10 @@ const searchInput = {
   border: "none"
 };
 
+const searchedValue = {
+  color: palette.black.light
+};
+
 export const SearchWrapper = styled.form`
   position: relative;
   display: flex;
@@ -35,5 +39,5 @@ export const SearchInput = styled.input`
 `;
 
 export const LastSearchedParagraph = styled.p`
-  color: green;
+  color: ${searchedValue.color};
 `;
