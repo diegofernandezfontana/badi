@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { palette } from "../../Styles";
+import { sizes, breakPoints, palette } from "../../Styles";
 
 const searchBarWrapper = {
   border: `1px solid ${palette.grey.dark}`,
@@ -15,8 +15,23 @@ const searchInput = {
 };
 
 const searchedValue = {
-  color: palette.black.light
+  color: palette.black.light,
+  paddingLeft: "8px"
 };
+
+const searchBar = {
+  maxWidth: sizes.tablet
+};
+
+
+export const SearchBarContainer = styled.div`
+  padding: 16px;
+  @media ${breakPoints.tablet} {
+    margin: 0 auto;
+    max-width: ${searchBar.maxWidth};
+  }
+`;
+
 
 export const SearchWrapper = styled.form`
   position: relative;
@@ -40,4 +55,5 @@ export const SearchInput = styled.input`
 
 export const LastSearchedParagraph = styled.p`
   color: ${searchedValue.color};
+  padding-left: ${searchedValue.paddingLeft};
 `;

@@ -37,7 +37,7 @@ export const Wrapper = styled.li`
   overflow: hidden;
   text-align: center;
 
-  @media ${breakPoints.tablet} {
+  @media ${breakPoints.laptop} {
     width: ${card.width.medium};
   }
 `;

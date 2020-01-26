@@ -5,7 +5,7 @@ import DropDown from "../DropDown";
 import GenericIcon from "../Icons/GenericIcon";
 import { searchIconPath } from "../Icons/paths";
 
-import { SearchWrapper, SearchInput, LastSearchedParagraph } from "./styles";
+import { SearchWrapper, SearchInput, LastSearchedParagraph, SearchBarContainer} from "./styles";
 
 const SearchBar = props => {
   const { onHandleSubmit, onHandleSearch } = props;
@@ -60,7 +60,7 @@ const SearchBar = props => {
   };
 
   return (
-    <Fragment>
+    <SearchBarContainer>
       <SearchWrapper onSubmit={handleSubmit}>
         <DropDown
           options={lastSearches}
@@ -74,10 +74,10 @@ const SearchBar = props => {
           onChange={handleChange}
           data-testid="searchbar-input"
         />
-        <GenericIcon path={searchIconPath} />
+        <GenericIcon path={searchIconPath}/>
       </SearchWrapper>
       {renderLastSearch()}
-    </Fragment>
+    </SearchBarContainer>
   );
 };
 
