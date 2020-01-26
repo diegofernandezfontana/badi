@@ -36,7 +36,10 @@ const DropDown = props => {
   const renderDropDown = () => {
     if (showOptions && options.length) {
       return (
-        <OptionsWrapper showOptions={showOptions}>
+        <OptionsWrapper
+          showOptions={showOptions}
+          data-testid="dropdown-options-wrapper"
+        >
           {renderOptions()}
         </OptionsWrapper>
       );
@@ -45,7 +48,7 @@ const DropDown = props => {
 
   return (
     <Wrapper>
-      <GenericIcon onClick={handleDisplay} />
+      <GenericIcon onClick={handleDisplay} data-testid="dropdown-icon" />
       {renderDropDown()}
     </Wrapper>
   );
