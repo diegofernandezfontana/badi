@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-import { palette, breakPoints, sizes } from "../../Styles/index";
+import { palette, breakPoints } from "../../Styles/index";
 
 const card = {
   border: `1px solid ${palette.grey.main};`,
@@ -14,7 +14,8 @@ const card = {
 };
 
 const title = {
-  color: palette.blue.main
+  color: palette.blue.main,
+  fontSize: "21px"
 };
 
 const ingredients = {
@@ -61,7 +62,7 @@ export const LinkTo = styled.a`
 
 export const Title = styled.h1`
   color: ${title.color};
-  font-size: 21px;
+  font-size: ${title.fontSize};
 `;
 
 export const IngredientsParagraph = styled.p`
