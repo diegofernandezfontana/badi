@@ -12,7 +12,12 @@ const Option = props => {
   return (
     <RowWrapper>
       <RecipieWrapper onClick={onHandleSearch({ searchedValue })}>{searchedValue}</RecipieWrapper>
-      <Icon path={closeIconPath} onClick={onHandleRemove({ searchedValue })} data-testid="option-close-icon" />
+      <Icon
+        path={closeIconPath}
+        onClick={onHandleRemove({ searchedValue })}
+        data-testid="option-close-icon"
+        cursorPointer
+      />
     </RowWrapper>
   );
 };
