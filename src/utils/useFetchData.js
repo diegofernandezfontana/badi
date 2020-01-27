@@ -4,12 +4,11 @@ import axios from 'axios';
 const recipiesApiLink = 'http://www.recipepuppy.com/api';
 const noCorsApi = 'https://cors-anywhere.herokuapp.com/';
 
-const baseRoute = `${noCorsApi}${recipiesApiLink}`;
-
 const useFetchData = params => {
   const [data, setData] = useState([]);
   const [fetchParams, setFetchParams] = useState(params);
   const [currentPage, setCurrentPage] = useState(1);
+  const baseRoute = `${noCorsApi}${recipiesApiLink}`;
 
   useEffect(() => {
     if (fetchParams) {
