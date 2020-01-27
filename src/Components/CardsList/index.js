@@ -26,7 +26,7 @@ const CardsList = props => {
 
   return (
     <Fragment>
-      <CardsContainer>{renderCards()}</CardsContainer>
+      <CardsContainer data-testid="cards-container">{renderCards()}</CardsContainer>
       <TextWrapper>{renderLoadMore()}</TextWrapper>
     </Fragment>
   );
