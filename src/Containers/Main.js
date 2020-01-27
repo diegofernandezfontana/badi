@@ -2,7 +2,7 @@ import React from 'react';
 
 import SearchBar from '../Components/SearchBar';
 import CardsList from '../Components/CardsList';
-import useFetchData from '../Services/useFetchData';
+import { useFetchData } from '../utils';
 
 import { generateUrl } from '../utils';
 
