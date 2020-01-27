@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 import Icon from '../Icons';
 import Option from './Option';
-import useOutsideClick from '../../utils';
+import { useCloseDropDown } from '../../utils';
 
 import { Wrapper, OptionsWrapper } from './styles';
 
@@ -11,7 +11,7 @@ const DropDown = props => {
   const { options, onHandleSearch, onHandleRemove } = props;
   const [showOptions, setShowOptions] = useState(false);
 
-  const { ref, isDropDownOpen, setIsDropDownOpen } = useOutsideClick();
+  const { ref, isDropDownOpen, setIsDropDownOpen } = useCloseDropDown();
 
   useEffect(() => {
     if (!isDropDownOpen) {
