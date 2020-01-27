@@ -3,7 +3,7 @@ module.exports = {
     browser: true,
     es6: true
   },
-  extends: ["plugin:cypress/recommended", "plugin:react/recommended"],
+  extends: ["plugin:react/recommended"],
   globals: {
     Atomics: "readonly",
     SharedArrayBuffer: "readonly"
@@ -15,7 +15,6 @@ module.exports = {
     ecmaVersion: 2018,
     sourceType: "module"
   },
-  plugins: ["react", "eslint-plugin-cypress"],
-  env: {"cypress/globals": true},
+  plugins: ["react"],
   rules: {}
 };

@@ -13,19 +13,36 @@ const useFetchData = params => {
 
   useEffect(() => {
     if (fetchParams) {
-      const getData = async () => {
-        const response = await axios
-          .get(`${baseRoute}/${fetchParams}`)
-          .then(res => res.data.results);
-        setData(response);
-      };
-
-      getData();
+      getData(true);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [fetchParams]);
 
-  return { data, setFetchParams };
+  useEffect(() => {
+    if(fetchParams){
+      getMoreData();
+    }
+  }, [currentPage])
+
+  const getData = async () => {
+    const response = await axios
+      .get(`${baseRoute}/${fetchParams}`)
+      .then(res => res.data.results);
+    
+    setData(response);
+  };
+  
+  const getMoreData =async () => {
+    const pageQuery = `&p=${currentPage}`;
+    const fetchRoute = `${baseRoute}/${fetchParams}${pageQuery}`;
+
+    const response = await axios
+      .get(fetchRoute)
+      .then(res => res.data.results);
+    
+    setData([...data, ...response]);
+  }
+
+  return { data, fetchParams, setFetchParams ,currentPage, setCurrentPage};
 };
 
 export default useFetchData;
