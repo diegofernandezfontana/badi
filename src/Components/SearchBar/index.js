@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
 import DropDown from '../DropDown';
-import GenericIcon from '../Icons/GenericIcon';
+import Icon from '../Icons';
 import { searchIconPath } from '../Icons/paths';
 
 import { SearchWrapper, SearchInput, LastSearchedParagraph, SearchBarContainer } from './styles';
@@ -72,7 +72,7 @@ const SearchBar = props => {
           onChange={handleChange}
           data-testid="searchbar-input"
         />
-        <GenericIcon path={searchIconPath} />
+        <Icon path={searchIconPath} />
       </SearchWrapper>
       {renderLastSearch()}
     </SearchBarContainer>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import GenericIcon from '../Icons/GenericIcon';
+import Icon from '../Icons';
 import Option from './Option';
 
 import { Wrapper, OptionsWrapper } from './styles';
@@ -40,7 +40,7 @@ const DropDown = props => {
 
   return (
     <Wrapper>
-      <GenericIcon onClick={handleDisplay} data-testid="dropdown-icon" />
+      <Icon onClick={handleDisplay} data-testid="dropdown-icon" />
       {renderDropDown()}
     </Wrapper>
   );

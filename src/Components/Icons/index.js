@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import { expandMoreIconPath } from './paths';
 import { palette } from '../../Styles';
+import { expandMoreIconPath } from './paths';
 
 const defaultPath = expandMoreIconPath;
 
-const GenericIcon = props => {
+const Icon = props => {
   const { color, scale, path, ...restProps } = props;
 
   const width = 24 * scale;
@@ -20,18 +20,16 @@ const GenericIcon = props => {
   );
 };
 
-GenericIcon.defaultProps = {
+Icon.defaultProps = {
   color: palette.grey.dark,
   path: defaultPath,
-  viewBox: 24,
   scale: 1,
 };
 
-GenericIcon.propTypes = {
+Icon.propTypes = {
   color: PropTypes.string,
   path: PropTypes.string,
   scale: PropTypes.number,
-  viewBox: PropTypes.number,
 };
 
-export default GenericIcon;
+export default Icon;

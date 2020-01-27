@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import GenericIcon from '../../Icons/GenericIcon';
+import Icon from '../../Icons';
 import { closeIconPath } from '../../Icons/paths';
 
 import { RowWrapper, RecipieWrapper } from './styles';
@@ -12,7 +12,7 @@ const Option = props => {
   return (
     <RowWrapper>
       <RecipieWrapper onClick={onHandleSearch({ searchedValue })}>{searchedValue}</RecipieWrapper>
-      <GenericIcon path={closeIconPath} onClick={onHandleRemove({ searchedValue })} data-testid="option-close-icon" />
+      <Icon path={closeIconPath} onClick={onHandleRemove({ searchedValue })} data-testid="option-close-icon" />
     </RowWrapper>
   );
 };
