@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
 
 import Icon from '../Icons';
 import Option from './Option';
+import useOutsideClick from '../../utils';
 
 import { Wrapper, OptionsWrapper } from './styles';
 
@@ -10,9 +11,18 @@ const DropDown = props => {
   const { options, onHandleSearch, onHandleRemove } = props;
   const [showOptions, setShowOptions] = useState(false);
 
+  const { ref, isDropDownOpen, setIsDropDownOpen } = useOutsideClick();
+
+  useEffect(() => {
+    if (!isDropDownOpen) {
+      setShowOptions(false);
+    }
+  }, [isDropDownOpen]);
+
   const handleDisplay = () => {
     if (options.length) {
       setShowOptions(!showOptions);
+      setIsDropDownOpen(true);
     }
   };
 
@@ -31,7 +41,7 @@ const DropDown = props => {
   const renderDropDown = () => {
     if (showOptions && options.length) {
       return (
-        <OptionsWrapper showOptions={showOptions} data-testid="dropdown-options-wrapper">
+        <OptionsWrapper showOptions={showOptions} ref={ref} data-testid="dropdown-options-wrapper">
           {renderOptions()}
         </OptionsWrapper>
       );
