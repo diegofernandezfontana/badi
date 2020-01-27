@@ -6,7 +6,6 @@ export const MainBackground = styled.div`
   background-color: ${bgColor};
   display: flex;
   flex-direction: column;
-  padding-top: 100px;
   min-height: 100vh;
 `;
 

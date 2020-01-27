@@ -1,10 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 import SearchBar from '../Components/SearchBar';
 import CardsList from '../Components/CardsList';
-import { useFetchData } from '../utils';
-
-import { generateUrl } from '../utils';
+import Navbar from '../Components/Navbar';
+import { useFetchData, generateUrl } from '../utils';
 
 import { MainBackground, Container } from './styles';
 
@@ -23,12 +22,15 @@ const Main = () => {
   };
 
   return (
-    <MainBackground>
-      <Container>
-        <SearchBar onHandleSubmit={handleSubmit} />
-        <CardsList cards={data} onHandleLoadMore={handleLoadMore} />
-      </Container>
-    </MainBackground>
+    <Fragment>
+      <Navbar />
+      <MainBackground>
+        <Container>
+          <SearchBar onHandleSubmit={handleSubmit} />
+          <CardsList cards={data} onHandleLoadMore={handleLoadMore} />
+        </Container>
+      </MainBackground>
+    </Fragment>
   );
 };
 
