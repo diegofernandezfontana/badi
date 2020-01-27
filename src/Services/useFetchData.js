@@ -14,11 +14,12 @@ const useFetchData = params => {
   useEffect(() => {
     if (fetchParams) {
       getData(true);
+      setCurrentPage(1)
     }
   }, [fetchParams]);
 
   useEffect(() => {
-    if(fetchParams){
+    if(fetchParams && currentPage > 1){
       getMoreData();
     }
   }, [currentPage])
