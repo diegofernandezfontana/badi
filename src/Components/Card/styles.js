@@ -27,18 +27,24 @@ export const Wrapper = styled.li`
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
   width: ${card.width.small};
   padding: ${card.padding};
   margin: ${card.margin};
   border: ${card.border};
   border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
   background-color: ${card.bgColor};
   overflow: hidden;
-  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07);
 
   @media ${breakPoints.laptop} {
     width: ${card.width.medium};
+  }
+
+  &:hover {
+    transition: 0.5s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.35);
   }
 `;
 
@@ -51,6 +57,7 @@ export const ImageWrapper = styled.div`
 export const CardImage = styled.img`
   object-fit: contain;
   width: 100%;
+  height: 100px;
 `;
 
 export const LinkTo = styled.a`
