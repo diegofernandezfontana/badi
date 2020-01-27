@@ -1,7 +1,7 @@
-import React, { Fragment } from "react";
+import React, { Fragment } from 'react';
 
-import Main from "./Containers/Main";
-import GlobalStyle from "./Styles/globalStyles";
+import Main from './Containers/Main';
+import GlobalStyle from './Styles/globalStyles';
 
 const App = () => {
   return (

@@ -1,17 +1,17 @@
-import styled from "styled-components";
-import { palette } from "../../Styles";
+import styled from 'styled-components';
+import { palette } from '../../Styles';
 
 const getComputedStyle = ({ showOptions }) => `
-  display: ${showOptions ? "block" : "none"};
+  display: ${showOptions ? 'block' : 'none'};
 
 `;
 
 const optionsWrapper = {
-  width: "300px",
-  top: "50px",
+  width: '300px',
+  top: '50px',
   border: `1px solid ${palette.grey.dark}`,
   zIndex: 2,
-  borderRadius: "4px"
+  borderRadius: '4px',
 };
 
 export const Wrapper = styled.div`
@@ -28,7 +28,7 @@ export const OptionsWrapper = styled.div`
   border-radius: ${optionsWrapper.borderRadius};
 
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     width: 10px;
     height: 10px;

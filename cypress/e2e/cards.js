@@ -1,8 +1,8 @@
-const searchParamOne = "Apple, lettuce"
-const searchParamTwo = "swiss cheese, potato"
+const searchParamOne = 'Apple, lettuce';
+const searchParamTwo = 'swiss cheese, potato';
 
-describe("Test whole app", () => {
-  it("should be able to make multiple searches, search again from last searches and removed items from dropdown" , () => {
+describe('Test whole app', () => {
+  it('should be able to make multiple searches, search again from last searches and removed items from dropdown', () => {
     cy.visit('/')
       .findByTestId('searchbar-input')
       .type(searchParamOne)
@@ -11,12 +11,11 @@ describe("Test whole app", () => {
       .findByTestId('searchbar-input')
       .type(searchParamTwo)
       .type('{enter}')
-      .findByTestId("dropdown-icon")
+      .findByTestId('dropdown-icon')
       .click()
       .findByText(searchParamOne)
       .click()
-      .findByTestId("dropdown-icon")
-      .click()
-  })
-})
-
+      .findByTestId('dropdown-icon')
+      .click();
+  });
+});

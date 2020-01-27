@@ -1,28 +1,27 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { sizes, breakPoints, palette } from "../../Styles";
+import { sizes, breakPoints, palette } from '../../Styles';
 
 const searchBarWrapper = {
   border: `1px solid ${palette.grey.dark}`,
-  height: "50px",
-  borderRadius: "6px",
-  padding: "0px 16px"
+  height: '50px',
+  borderRadius: '6px',
+  padding: '0px 16px',
 };
 
 const searchInput = {
-  width: "100%",
-  border: "none"
+  width: '100%',
+  border: 'none',
 };
 
 const searchedValue = {
   color: palette.black.light,
-  paddingLeft: "8px"
+  paddingLeft: '8px',
 };
 
 const searchBar = {
-  maxWidth: sizes.tablet
+  maxWidth: sizes.tablet,
 };
-
 
 export const SearchBarContainer = styled.div`
   padding: 16px;
@@ -31,7 +30,6 @@ export const SearchBarContainer = styled.div`
     max-width: ${searchBar.maxWidth};
   }
 `;
-
 
 export const SearchWrapper = styled.form`
   position: relative;

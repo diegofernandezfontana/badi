@@ -1,25 +1,25 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { palette, breakPoints } from "../../Styles/index";
+import { palette, breakPoints } from '../../Styles/index';
 
 const card = {
   border: `1px solid ${palette.grey.main};`,
-  padding: "16px",
-  margin: "16px",
+  padding: '16px',
+  margin: '16px',
   bgColor: `${palette.white.main}`,
   width: {
-    small: "320px",
-    medium: "360px"
-  }
+    small: '320px',
+    medium: '360px',
+  },
 };
 
 const title = {
   color: palette.blue.main,
-  fontSize: "21px"
+  fontSize: '21px',
 };
 
 const ingredients = {
-  color: palette.black.main
+  color: palette.black.main,
 };
 
 export const Wrapper = styled.li`

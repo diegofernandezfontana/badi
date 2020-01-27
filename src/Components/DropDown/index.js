@@ -1,10 +1,10 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
-import GenericIcon from "../Icons/GenericIcon";
-import Option from "./Option";
+import GenericIcon from '../Icons/GenericIcon';
+import Option from './Option';
 
-import { Wrapper, OptionsWrapper } from "./styles";
+import { Wrapper, OptionsWrapper } from './styles';
 
 const DropDown = props => {
   const { options, onHandleSearch, onHandleRemove } = props;
@@ -20,12 +20,7 @@ const DropDown = props => {
     if (showOptions && options.length) {
       return options.map(option => {
         return (
-          <Option
-            searchedValue={option}
-            onHandleSearch={onHandleSearch}
-            onHandleRemove={onHandleRemove}
-            key={option}
-          />
+          <Option searchedValue={option} onHandleSearch={onHandleSearch} onHandleRemove={onHandleRemove} key={option} />
         );
       });
     }
@@ -36,10 +31,7 @@ const DropDown = props => {
   const renderDropDown = () => {
     if (showOptions && options.length) {
       return (
-        <OptionsWrapper
-          showOptions={showOptions}
-          data-testid="dropdown-options-wrapper"
-        >
+        <OptionsWrapper showOptions={showOptions} data-testid="dropdown-options-wrapper">
           {renderOptions()}
         </OptionsWrapper>
       );
@@ -57,7 +49,7 @@ const DropDown = props => {
 DropDown.propTypes = {
   options: PropTypes.array,
   onHandleSearch: PropTypes.func,
-  onHandleRemove: PropTypes.func
+  onHandleRemove: PropTypes.func,
 };
 
 export default DropDown;

@@ -1,20 +1,20 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-import { palette, breakPoints } from "../../Styles/index";
+import { palette, breakPoints } from '../../Styles/index';
 
 const label = {
   bgColor: palette.red.main,
   color: palette.black.dark,
   left: {
-    small: "50%",
-    large: "55%"
+    small: '50%',
+    large: '55%',
   },
   top: {
-    small: "20px",
-    large: "30px"
+    small: '20px',
+    large: '30px',
   },
-  width: "220px",
-  fontSize: "12px"
+  width: '220px',
+  fontSize: '12px',
 };
 
 export const Wrapper = styled.div`

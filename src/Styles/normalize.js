@@ -1,4 +1,4 @@
-import { css } from "styled-components";
+import { css } from 'styled-components';
 
 const normalize = css`
   *,
@@ -13,8 +13,7 @@ const normalize = css`
   }
   body {
     margin: 0;
-    font-family: Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji";
+    font-family: Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji';
   }
   hr {
     height: 0;
@@ -30,7 +29,7 @@ const normalize = css`
   kbd,
   samp,
   pre {
-    font-family: SFMono-Regular, Consolas, "Liberation Mono", Menlo, monospace; /* 1 */
+    font-family: SFMono-Regular, Consolas, 'Liberation Mono', Menlo, monospace; /* 1 */
     font-size: 1em; /* 2 */
   }
 
@@ -67,24 +66,24 @@ const normalize = css`
   }
 
   button,
-  [type="button"],
-  [type="reset"],
-  [type="submit"] {
+  [type='button'],
+  [type='reset'],
+  [type='submit'] {
     -webkit-appearance: button;
   }
 
   button::-moz-focus-inner,
-  [type="button"]::-moz-focus-inner,
-  [type="reset"]::-moz-focus-inner,
-  [type="submit"]::-moz-focus-inner {
+  [type='button']::-moz-focus-inner,
+  [type='reset']::-moz-focus-inner,
+  [type='submit']::-moz-focus-inner {
     border-style: none;
     padding: 0;
   }
 
   button:-moz-focusring,
-  [type="button"]:-moz-focusring,
-  [type="reset"]:-moz-focusring,
-  [type="submit"]:-moz-focusring {
+  [type='button']:-moz-focusring,
+  [type='reset']:-moz-focusring,
+  [type='submit']:-moz-focusring {
     outline: 1px dotted ButtonText;
   }
 
@@ -100,17 +99,17 @@ const normalize = css`
     vertical-align: baseline;
   }
 
-  [type="number"]::-webkit-inner-spin-button,
-  [type="number"]::-webkit-outer-spin-button {
+  [type='number']::-webkit-inner-spin-button,
+  [type='number']::-webkit-outer-spin-button {
     height: auto;
   }
 
-  [type="search"] {
+  [type='search'] {
     -webkit-appearance: textfield; /* 1 */
     outline-offset: -2px; /* 2 */
   }
 
-  [type="search"]::-webkit-search-decoration {
+  [type='search']::-webkit-search-decoration {
     -webkit-appearance: none;
   }
 

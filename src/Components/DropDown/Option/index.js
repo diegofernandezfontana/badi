@@ -1,24 +1,18 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
 
-import GenericIcon from "../../Icons/GenericIcon";
-import { closeIconPath } from "../../Icons/paths";
+import GenericIcon from '../../Icons/GenericIcon';
+import { closeIconPath } from '../../Icons/paths';
 
-import { RowWrapper, RecipieWrapper } from "./styles";
+import { RowWrapper, RecipieWrapper } from './styles';
 
 const Option = props => {
   const { searchedValue, onHandleSearch, onHandleRemove } = props;
 
   return (
     <RowWrapper>
-      <RecipieWrapper onClick={onHandleSearch({ searchedValue })}>
-        {searchedValue}
-      </RecipieWrapper>
-      <GenericIcon
-        path={closeIconPath}
-        onClick={onHandleRemove({ searchedValue })}
-        data-testid="option-close-icon"
-      />
+      <RecipieWrapper onClick={onHandleSearch({ searchedValue })}>{searchedValue}</RecipieWrapper>
+      <GenericIcon path={closeIconPath} onClick={onHandleRemove({ searchedValue })} data-testid="option-close-icon" />
     </RowWrapper>
   );
 };
@@ -26,7 +20,7 @@ const Option = props => {
 Option.propTypes = {
   searchedValue: PropTypes.string.isRequired,
   onHandleSearch: PropTypes.func.isRequired,
-  onHandleRemove: PropTypes.func.isRequired
+  onHandleRemove: PropTypes.func.isRequired,
 };
 
 export default Option;

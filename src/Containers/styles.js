@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
-const bgColor = "#f6f6f6";
+const bgColor = '#f6f6f6';
 
 export const MainBackground = styled.div`
   background-color: ${bgColor};

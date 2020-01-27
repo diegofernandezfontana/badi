@@ -1,6 +1,6 @@
-import React from "react";
-import { render, fireEvent } from "@testing-library/react";
-import Option from "../";
+import React from 'react';
+import { render, fireEvent } from '@testing-library/react';
+import Option from '../';
 
 const onSearchClick = jest.fn();
 const onRemoveClick = jest.fn();
@@ -8,20 +8,20 @@ const onRemoveClick = jest.fn();
 const mockedData = {
   onHandleSearch: onSearchClick,
   onHandleRemove: onRemoveClick,
-  searchedValue: "Apple"
+  searchedValue: 'Apple',
 };
 
-const closeIconTestId = "option-close-icon";
+const closeIconTestId = 'option-close-icon';
 
-describe("DropDown Component", () => {
-  it("should render option", () => {
+describe('DropDown Component', () => {
+  it('should render option', () => {
     const { getByText } = render(<Option {...mockedData} />);
 
-    const optionText = getByText("Apple");
+    const optionText = getByText('Apple');
     expect(optionText).toBeInTheDocument();
   });
 
-  it("should be able to click the close icon to fire an event", () => {
+  it('should be able to click the close icon to fire an event', () => {
     const { getByTestId } = render(<Option {...mockedData} />);
 
     const closeIcon = getByTestId(closeIconTestId);
@@ -30,10 +30,10 @@ describe("DropDown Component", () => {
     expect(onRemoveClick).toHaveBeenCalled();
   });
 
-  it("should be able to click on the paragraph to fire an event", () => {
+  it('should be able to click on the paragraph to fire an event', () => {
     const { getByText } = render(<Option {...mockedData} />);
 
-    const optionText = getByText("Apple");
+    const optionText = getByText('Apple');
 
     fireEvent.click(optionText);
     expect(onSearchClick).toHaveBeenCalled();

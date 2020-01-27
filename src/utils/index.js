@@ -1,3 +1,3 @@
-import generateUrl from "./generateUrl";
+import generateUrl from './generateUrl';
 
 export { generateUrl };

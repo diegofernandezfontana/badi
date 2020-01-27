@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const recipiesApiLink = "http://www.recipepuppy.com/api";
-const noCorsApi = "https://cors-anywhere.herokuapp.com/";
+const recipiesApiLink = 'http://www.recipepuppy.com/api';
+const noCorsApi = 'https://cors-anywhere.herokuapp.com/';
 
 const baseRoute = `${noCorsApi}${recipiesApiLink}`;
 
@@ -14,36 +14,32 @@ const useFetchData = params => {
   useEffect(() => {
     if (fetchParams) {
       getData(true);
-      setCurrentPage(1)
+      setCurrentPage(1);
     }
   }, [fetchParams]);
 
   useEffect(() => {
-    if(fetchParams && currentPage > 1){
+    if (fetchParams && currentPage > 1) {
       getMoreData();
     }
-  }, [currentPage])
+  }, [currentPage]);
 
   const getData = async () => {
-    const response = await axios
-      .get(`${baseRoute}/${fetchParams}`)
-      .then(res => res.data.results);
-    
+    const response = await axios.get(`${baseRoute}/${fetchParams}`).then(res => res.data.results);
+
     setData(response);
   };
-  
-  const getMoreData =async () => {
+
+  const getMoreData = async () => {
     const pageQuery = `&p=${currentPage}`;
     const fetchRoute = `${baseRoute}/${fetchParams}${pageQuery}`;
 
-    const response = await axios
-      .get(fetchRoute)
-      .then(res => res.data.results);
-    
-    setData([...data, ...response]);
-  }
+    const response = await axios.get(fetchRoute).then(res => res.data.results);
 
-  return { data, fetchParams, setFetchParams ,currentPage, setCurrentPage};
+    setData([...data, ...response]);
+  };
+
+  return { data, fetchParams, setFetchParams, currentPage, setCurrentPage };
 };
 
 export default useFetchData;

@@ -1,10 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const optionRow = {
-  height: "40px",
-  padding: "8px 16px",
-  marginBottom: "2px",
-  borderRadius: "4px"
+  height: '40px',
+  padding: '8px 16px',
+  marginBottom: '2px',
+  borderRadius: '4px',
 };
 
 export const RowWrapper = styled.div`

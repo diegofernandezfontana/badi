@@ -1,15 +1,15 @@
-import React, { useState, Fragment } from "react";
-import PropTypes from "prop-types";
+import React, { useState, Fragment } from 'react';
+import PropTypes from 'prop-types';
 
-import DropDown from "../DropDown";
-import GenericIcon from "../Icons/GenericIcon";
-import { searchIconPath } from "../Icons/paths";
+import DropDown from '../DropDown';
+import GenericIcon from '../Icons/GenericIcon';
+import { searchIconPath } from '../Icons/paths';
 
-import { SearchWrapper, SearchInput, LastSearchedParagraph, SearchBarContainer} from "./styles";
+import { SearchWrapper, SearchInput, LastSearchedParagraph, SearchBarContainer } from './styles';
 
 const SearchBar = props => {
   const { onHandleSubmit, onHandleSearch } = props;
-  const [searchValue, setSearchValue] = useState("");
+  const [searchValue, setSearchValue] = useState('');
   const [lastSearches, setLastSearches] = useState([]);
 
   const handleChange = event => {
@@ -23,11 +23,11 @@ const SearchBar = props => {
 
     if (searchValue.length > 3) {
       onHandleSubmit(searchValue);
-      setSearchValue("");
+      setSearchValue('');
       let searchesArr = lastSearches;
 
-      if(searchesArr.length > 4){
-        searchesArr.pop()
+      if (searchesArr.length > 4) {
+        searchesArr.pop();
       }
 
       setLastSearches([searchValue, ...searchesArr]);
@@ -42,7 +42,7 @@ const SearchBar = props => {
 
   const handleSearchAgain = ({ searchedValue }) => event => {
     const filteredSearches = getFilteredSearches(searchedValue);
-    
+
     setLastSearches([searchedValue, ...filteredSearches]);
     onHandleSubmit(searchedValue);
   };
@@ -55,11 +55,7 @@ const SearchBar = props => {
 
   const renderLastSearch = () => {
     if (lastSearches.length) {
-      return (
-        <LastSearchedParagraph>
-          Results for: {lastSearches[0]}
-        </LastSearchedParagraph>
-      );
+      return <LastSearchedParagraph>Results for: {lastSearches[0]}</LastSearchedParagraph>;
     }
 
     return null;
@@ -68,11 +64,7 @@ const SearchBar = props => {
   return (
     <SearchBarContainer>
       <SearchWrapper onSubmit={handleSubmit}>
-        <DropDown
-          options={lastSearches}
-          onHandleSearch={handleSearchAgain}
-          onHandleRemove={handleRemoveItem}
-        />
+        <DropDown options={lastSearches} onHandleSearch={handleSearchAgain} onHandleRemove={handleRemoveItem} />
         <SearchInput
           value={searchValue}
           placeholder="Search recipies by ingredients (comma separated)"
@@ -80,7 +72,7 @@ const SearchBar = props => {
           onChange={handleChange}
           data-testid="searchbar-input"
         />
-        <GenericIcon path={searchIconPath}/>
+        <GenericIcon path={searchIconPath} />
       </SearchWrapper>
       {renderLastSearch()}
     </SearchBarContainer>
@@ -90,7 +82,7 @@ const SearchBar = props => {
 SearchBar.propTypes = {
   onHandleSubmit: PropTypes.func,
   onHandleRemove: PropTypes.func,
-  onHandleSearch: PropTypes.func
+  onHandleSearch: PropTypes.func,
 };
 
 export default SearchBar;

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import { Wrapper, Title } from "./styles";
+import { Wrapper, Title } from './styles';
 
 const Label = () => {
   return (
