@@ -23,8 +23,14 @@ const SearchBar = props => {
 
     if (searchValue.length > 3) {
       onHandleSubmit(searchValue);
-      setLastSearches([searchValue, ...lastSearches]);
       setSearchValue("");
+      let searchesArr = lastSearches;
+
+      if(searchesArr.length > 4){
+        searchesArr.pop()
+      }
+
+      setLastSearches([searchValue, ...searchesArr]);
     }
   };
 
@@ -34,9 +40,9 @@ const SearchBar = props => {
     return lastSearches.filter((_, idx) => idx !== recipieIdx);
   };
 
-  const handleSearch = ({ searchedValue }) => event => {
+  const handleSearchAgain = ({ searchedValue }) => event => {
     const filteredSearches = getFilteredSearches(searchedValue);
-
+    
     setLastSearches([searchedValue, ...filteredSearches]);
     onHandleSubmit(searchedValue);
   };
@@ -64,7 +70,7 @@ const SearchBar = props => {
       <SearchWrapper onSubmit={handleSubmit}>
         <DropDown
           options={lastSearches}
-          onHandleSearch={handleSearch}
+          onHandleSearch={handleSearchAgain}
           onHandleRemove={handleRemoveItem}
         />
         <SearchInput
