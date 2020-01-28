@@ -24,6 +24,17 @@ Hereby the details:
      searches, with the possibility to either "search again" when clicking the option, or
      "remove" search item which will remove the item from the list
 
+## Repo:
+
+### Github
+
+Open [https://github.com/diegofernandezfontana/badi](https://github.com/diegofernandezfontana/badi) to view the repository.
+
+### Open in browser
+
+Open [https://badi-omega.now.sh/](https://badi-omega.now.sh/) to view in the browser.
+It has been deployed in [https://zeit.co](https://zeit.co)
+
 ## How to run the code:
 
 ### `npm start`
