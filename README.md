@@ -56,7 +56,7 @@ Builds the app for production to the `build` folder.<br />
 Launches test E2E in the console.
 Note: Might conflict if the application is running on port 3000.
 
-### `npm test:e2e:run`
+### `npm test:e2e:dev`
 
 Launches test E2E in explorer. With this, its posible to see whats is being tested in the Application and its posible to debug in real time.
 Note: Might conflict if the application is running on port 3000.
