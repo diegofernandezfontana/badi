@@ -12,6 +12,7 @@ const searchBarWrapper = {
 const searchInput = {
   width: '100%',
   border: 'none',
+  paddingLeft: '8px',
 };
 
 const searchedValue = {
@@ -45,6 +46,7 @@ export const SearchWrapper = styled.form`
 export const SearchInput = styled.input`
   width: ${searchInput.width};
   border: ${searchInput.border};
+  padding-left: ${searchInput.paddingLeft};
 
   &:focus {
     outline: none;
