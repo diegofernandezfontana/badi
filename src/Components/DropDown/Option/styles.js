@@ -20,9 +20,11 @@ export const RowWrapper = styled.div`
 `;
 
 export const RecipieWrapper = styled.p`
-  display: flex;
-  flex-grow: 1;
+  display: block;
   color: grey;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
   &:hover {
     cursor: pointer;

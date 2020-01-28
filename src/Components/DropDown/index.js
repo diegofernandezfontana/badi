@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import Icon from '../Icons';
 import Option from './Option';
 import { useCloseDropDown } from '../../utils';
-
+import { expandLessIconPath } from '../Icons/paths';
 import { Wrapper, OptionsWrapper } from './styles';
 
 const DropDown = props => {
@@ -24,6 +24,11 @@ const DropDown = props => {
       setShowOptions(!showOptions);
       setIsDropDownOpen(true);
     }
+  };
+
+  const handleCloseDropDown = () => {
+    setShowOptions(false);
+    setIsDropDownOpen(true);
   };
 
   const renderOptions = () => {
@@ -48,9 +53,16 @@ const DropDown = props => {
     }
   };
 
+  const renderToggleIcon = () => {
+    if (!showOptions) {
+      return <Icon onClick={handleDisplay} data-testid="dropdown-icon" />;
+    }
+    return <Icon path={expandLessIconPath} onClick={handleCloseDropDown} data-testid="dropdown-closeArrow-icon" />;
+  };
+
   return (
     <Wrapper>
-      <Icon onClick={handleDisplay} data-testid="dropdown-icon" />
+      {renderToggleIcon()}
       {renderDropDown()}
     </Wrapper>
   );

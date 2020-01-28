@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { palette } from '../../Styles';
+import { palette, breakPoints } from '../../Styles';
 
 const getComputedStyle = ({ showOptions }) => `
   display: ${showOptions ? 'block' : 'none'};
@@ -7,7 +7,10 @@ const getComputedStyle = ({ showOptions }) => `
 `;
 
 const optionsWrapper = {
-  width: '300px',
+  width: {
+    small: '250px',
+    medium: '500px',
+  },
   top: '50px',
   border: `1px solid ${palette.grey.dark}`,
   zIndex: 2,
@@ -22,11 +25,14 @@ export const Wrapper = styled.div`
 export const OptionsWrapper = styled.div`
   position: absolute;
   top: ${optionsWrapper.top};
-  width: ${optionsWrapper.width};
+  width: ${optionsWrapper.width.small};
   border: ${optionsWrapper.border};
   z-index: ${optionsWrapper.zIndex};
   border-radius: ${optionsWrapper.borderRadius};
 
+  @media ${breakPoints.tablet} {
+    width: ${optionsWrapper.width.medium};
+  }
   &:before {
     content: '';
     position: absolute;
